@@ -13,6 +13,7 @@ $ja_font : "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ
 $blue1 : #42b9d0;
 $blue2 : #339fd1;
 $gray_blue : #eaf2f4;
+$fontColor : #626262;
 
 /**************************************/
 
@@ -87,7 +88,7 @@ header{
         padding: 0;
 
         a{
-          color: #626262;
+          color: $fontColor;
           text-decoration: none;
           font-weight: bold;
           @include fontsize(14);
@@ -228,7 +229,7 @@ header{
 
   .columns{
 
-    color: #626262;
+    color: $fontColor;
 
     .service_title{
       @include fontsize(18);
@@ -475,4 +476,150 @@ h1{
   margin: 0;
   padding: 0;
 }
+
+
+// 仮想ページ
+#sub_cover{
+
+  h2 {
+    text-align: center;
+    color: white;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin: 0;
+    letter-spacing: 0.2rem;
+  }
+
+  //retina_bg
+
+    background-image: url("../images/news/sub_cover.jpg");
+    background-size: cover;
+    padding:40px 0;
+
+  @media screen and (-webkit-min-device-pixel-ratio:2),
+                    (min-resolution: 2dppx){
+
+    background-image: url("../images/news/sub_cover@2x.jpg");
+
+  }
+
+  @media (min-width: 550px) {
+    h2 {
+      font-size: 3.2rem;
+    }
+    padding:80px 0;
+  }
+  // min-width: 550px
+
+}
+
+#contents {
+  padding-top: 20px;
+
+  @media (min-width: 550px) {
+    #contents {
+      padding-top: 35px;
+      padding-bottom: 70px;
+    }
+  }
+  // min-width: 550px
+  
+  #main {
+    h2 {
+      color: $blue1;
+      font-size: 1.5rem;
+      border-bottom: 3px solid;
+      font-weight: bold;
+      padding-bottom: 15px;
+    }
+    .news_li li {
+      list-style: none;
+      font-size: 1.5rem;
+      span {
+        font-family: Arial;
+        display: block;
+        color: $blue1;
+        font-weight: bold;
+        margin-bottom: 3px;
+      }
+    }
+  }
+  @media (min-width: 550px) {
+    #main {
+      padding-right: 20px;
+      h2 {
+        font-size: 2rem;
+        padding-bottom: 20px;
+      }
+      .news_li li {
+        padding-bottom: 5px;
+        span {
+          display: inline-block;
+          margin-bottom: 0;
+          padding-right: 10px;
+        }
+      }
+    }
+  }
+  // min-width: 550px
+
+  #sidebar {
+    padding-bottom: 20px;
+    .pc_sidemenu {
+      h3 {
+        color: $blue1;
+        font-size: 1.4rem;
+        letter-spacing: 0.2rem;
+        font-weight: bold;
+        background-color: #f3f9fb;
+        padding: 15px;
+        margin-bottom: 0;
+      }
+      li {
+        list-style: none;
+        display: block;
+        border-bottom: 1px solid #e5e5e5;
+        background-repeat: no-repeat;
+        background-position: 8px center;
+        margin-bottom: 0;
+        padding: 10px 10px 10px 20px;
+        background-size: 4px 8px;
+        background-image: url("../images/news/side_arrow.png");
+        
+        @media screen and (-webkit-min-device-pixel-ratio:2),
+                          (min-resolution: 2dppx){
+          background-image: url("../images/news/side_arrow@2x.png");
+        }
+        a {
+          color: $blue2;
+          text-decoration: none;
+        }
+      }
+    }
+    @media (max-width: 549px) {
+      .pc_sidemenu {
+        display: none;
+      }
+    }
+  }
+  
+  // COMPANY INFO
+  #main {
+    .company_title {
+      margin-bottom: 0;
+    }
+    th {
+      padding: 20px 20px 20px 0;
+      color: $fontColor;
+      font-size: 1.4rem;
+    }
+    td {
+      padding: 20px 0;
+      color: $fontColor;
+      font-size: 1.4rem;
+      
+    }
+  }
+}
+
 
