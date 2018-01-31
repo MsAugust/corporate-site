@@ -270,7 +270,7 @@ h1 {
 #contents {
   padding-top: 20px; }
   @media (min-width: 550px) {
-    #contents #contents {
+    #contents {
       padding-top: 35px;
       padding-bottom: 70px; } }
   #contents #main h2 {
